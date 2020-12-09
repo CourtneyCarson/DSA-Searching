@@ -16,26 +16,26 @@ to try and find 16.
          and so on until it either finds the number or does not & if not will return -1
 
 Example Code:         */
-const sortedList = [3, 5, 6, 8, 11, 12, 14, 15, 17, 18]
+// const sortedList = [3, 5, 6, 8, 11, 12, 14, 15, 17, 18];
 
-function binarySearch(array, value, start = 0, end = array.length - 1) {
-  if (start > end) return -1;
+// function binarySearch(array, value, start = 0, end = array.length - 1) {
+//   if (start > end) return -1;
 
-  let index = Math.floor((start + end) / 2);
-  let item = array[index];
+//   let index = Math.floor((start + end) / 2);
+//   let item = array[index];
 
-  if (item === value) {
-    return index;
-  }
-  else if (item < value) {
-    return binarySearch(array, value, index + 1, end);
-  }
-  else if (item > value) {
-    return binarySearch(array, value, start, index - 1);
-  }
-};
+//   if (item === value) {
+//     return index;
+//   }
+//   else if (item < value) {
+//     return binarySearch(array, value, index + 1, end);
+//   }
+//   else if (item > value) {
+//     return binarySearch(array, value, start, index - 1);
+//   }
+// };
 
-console.log(binarySearch(sortedList, 8))
+// console.log(binarySearch(sortedList, 8));
 
 /* SEE SEARCH FUNCTIONS COMPONENT & APP 
 2. Adding a React UI
@@ -72,5 +72,41 @@ Imagine you are looking for a book in a library with a Dewey Decimal index.How w
 it ? Can you express this process as a search algorithm ? Implement your algorithm to find a book;
 whose Dewey and book title is provided. 
 */
+let deweyDecimal = [
+  { 001: 'horror' },
+  { 002: 'mystery' },
+  { 003: 'romance' },
+  { 004: 'action' },
+];
 
+let books = [
+  { 'this book is scary': 'horror' },
+  { 'this book is a mystery': 'mystery' },
+  { 'a romantic book': 'romance' },
+  { 'a book about action': 'action' },
+  { 'this book is scarier': 'horror' },
+  { 'this book is more mysterious': 'mystery' },
+  { 'mystery': 'book' },
+  { 'a book more romantic than the other one': 'romance' },
+  { 'a book full of action': 'action' },
+];
+// no binary search for a library -- isam// 
+// think about way 
 
+function findBooks(type) {
+  // let start = 0;
+  // let end = books.length - 1; 
+  for (let i = 0; i < books.length; i++) {
+    if (type === deweyDecimal) {
+      return deweyDecimal[i];
+    }
+  }
+  console.log('this is genre', deweyDecimal);
+}
+console.log(findBooks(books.mystery));
+// findBooks()
+
+/*
+4.  
+
+*/
